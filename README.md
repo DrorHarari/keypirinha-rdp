@@ -27,8 +27,5 @@ For manual installation simply download the rdp.keypirinha-package file from the
 
 ## Release Notes ##
 
-**V0.1.1**
-- Git Actions implementation
-
 **V0.1**
 - Initial release
