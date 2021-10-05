@@ -2,7 +2,6 @@
 from pathlib import Path
 import os
 import zipfile
-import msvcrt
 
 PACKAGE_NAME="rdp"
 FILES=["Rdp.py","Rdp.ico","LICENSE"]
@@ -25,7 +24,6 @@ except Exception as exc:
         zf.close()
         os.remove(PACKAGE_FILE)
     print(f"Failed to create package {PACKAGE_NAME}. {exc}")
-    msvcrt.getch()
     os._exit(1)
 
 print(f"Done")
