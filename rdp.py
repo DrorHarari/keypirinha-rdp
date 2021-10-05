@@ -61,7 +61,7 @@ class Rdp(kp.Plugin):
             try:
                 server = winreg.OpenKey(winreg.HKEY_CURRENT_USER, f'{self.RDP_SERVERS}\\{server_key}', 0, self.access_mode)
                 user = f' as {winreg.QueryValueEx(server, "UsernameHint")[0]}'
-            except:
+            except Exception:
                 pass
             suggestions.append(self.create_item(
                 category=self.ITEMCAT_RDP,
@@ -78,4 +78,4 @@ class Rdp(kp.Plugin):
             return
 
         kpu.shell_execute(self.MSTSC, args=f'/v:{item.target()}', working_dir='', verb='',
-            try_runas=False, detect_nongui=False, api_flags=None, terminal_cmd=None, show=-1)
+                          try_runas=False, detect_nongui=False, api_flags=None, terminal_cmd=None, show=-1)
