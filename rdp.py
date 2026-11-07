@@ -54,6 +54,7 @@ class Rdp(kp.Plugin):
             n_subkeys, n_values, mod_time = winreg.QueryInfoKey(servers)
         except Exception:
             n_subkeys = 0
+            self.warn(f"No saved RDP sessions were found.")
 
         for i in range(n_subkeys):
             server_key = winreg.EnumKey(servers, i).lower()
