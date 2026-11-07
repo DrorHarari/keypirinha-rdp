@@ -49,7 +49,7 @@ class Rdp(kp.Plugin):
         else:
             user_input = user_input.lower()
 
-        try
+        try:
             servers = winreg.OpenKeyEx(winreg.HKEY_CURRENT_USER, self.RDP_SERVERS, 0, self.access_mode)
             n_subkeys, n_values, mod_time = winreg.QueryInfoKey(servers)
         except Exception:
