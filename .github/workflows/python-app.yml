@@ -43,6 +43,9 @@ jobs:
         cd etc
         python ./build.py
 
+    - name: List built files
+      run: ls -la ./etc/
+
     - name: Create release and upload asset
       uses: softprops/action-gh-release@v2
       with:
