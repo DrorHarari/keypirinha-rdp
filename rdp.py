@@ -49,9 +49,12 @@ class Rdp(kp.Plugin):
         else:
             user_input = user_input.lower()
 
-        servers = winreg.OpenKeyEx(winreg.HKEY_CURRENT_USER, self.RDP_SERVERS, 0, self.access_mode)
+        try
+            servers = winreg.OpenKeyEx(winreg.HKEY_CURRENT_USER, self.RDP_SERVERS, 0, self.access_mode)
+            n_subkeys, n_values, mod_time = winreg.QueryInfoKey(servers)
+        except Exception:
+            n_subkeys = 0
 
-        n_subkeys, n_values, mod_time = winreg.QueryInfoKey(servers)
         for i in range(n_subkeys):
             server_key = winreg.EnumKey(servers, i).lower()
             if not user_input.lower() in server_key:
