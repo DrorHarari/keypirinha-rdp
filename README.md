@@ -29,3 +29,5 @@ For manual installation simply download the rdp.keypirinha-package file from the
 
 **V0.1**
 - Initial release
+**V0.2**
+- Log warning when there are no saved RDP sessions
