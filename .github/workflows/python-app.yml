@@ -54,6 +54,6 @@ jobs:
         body: Version ${{ steps.version.outputs.version }} - see changes in README.md
         draft: false
         prerelease: true
-        files: ./etc/rdp.keypirinha-package
+        files: ./rdp.keypirinha-package
       env:
         GITHUB_TOKEN: ${{ github.token }}
